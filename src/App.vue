@@ -1,16 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <p>
-      {{ message }}
-    </p>
-    <p>
-      {{ date }}
-    </p>
-    <input type="text" v-model="name" @keyup="getUserInfo" />
-    <p v-if="grettings">
-      {{ grettings }}
-    </p>
+    <div>
+      <div class="block grid-cols-2 gap-x-4 md:grid my-2">
+        <div>
+          <p>
+            {{ message }}
+          </p>
+        </div>
+
+        <div>
+          <input
+            class="px-4 bg-gray-200 rounded-md"
+            type="text"
+            v-model="name"
+            @keyup="getUserInfo"
+          />
+          <p v-if="grettings">
+            {{ grettings }}
+          </p>
+        </div>
+      </div>
+
+      <p>
+        {{ date }}
+      </p>
+    </div>
   </div>
 </template>
 
