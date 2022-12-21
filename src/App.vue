@@ -1,19 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <p>
+      {{ message }}
+    </p>
+    <p>
+      {{ date }}
+    </p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      message: "Welcome to Lolocar",
+      date: new Date(),
+    };
+  },
+  created() {
+    setInterval(() => {
+      this.date = new Date();
+    }, 1000);
+  },
+};
 </script>
 
 <style>
